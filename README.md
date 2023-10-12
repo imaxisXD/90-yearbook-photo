@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<a href="https://emojis.sh/">
+  <h1 align="center">90's yearbook</h1>
+</a>
 
-## Getting Started
+<p align="center">
+  Turn your selfies into a 90's yearbook photo in seconds.
+</p>
 
-First, run the development server:
+<p align="center">
+  <a href="https://twitter.com/abhishk_084">
+    <img src="https://img.shields.io/twitter/follow/abhishk_084?style=flat&logo=x&color=0bf&logoColor=fff" alt="Abhishek's X follower count" />
+  </a>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+  <a href="https://github.com/imaxisXD/90-yearbook-photo">
+    <img src="https://img.shields.io/github/stars/imaxisXD/90-yearbook-photo?label=imaxisXD%2F90-yearbook-photo" alt="90's yearbook repo star count" />
+  </a>
+</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<p align="center">
+  <a href="#tech-stack"><strong>Tech Stack</strong></a> ·
+  <a href="#author"><strong>Author</strong></a> ·
+  <a href="#credits"><strong>Credits</strong></a>
+</p>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<a href="https://emojis.sh/">
+    <img alt="grid of ai generated emojis including pepe-soldier, goldendoodle, minecraft-tree, and pusheen-dog " src="public/_static/readme.png"> 
+</a>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<br/>
 
-## Learn More
+## Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- [Replicate](https://replicate.com/) - AI provider
+- [Neon](https://neon.tech) - database
+- [Drizzle](https://orm.drizzle.team/) - ORM
+- [Next.js](https://nextjs.org/docs/app) - app router, server actions
+- [UploadThings](https://uploadthing.com) - storage
+- [Vercel](https://vercel.com/) - hosting
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Note that you'll need to:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Set up [Replicate](https://replicate.com)
+- Set up [Neon](https://neon.tech)
+- Set up [UploadThings](https://uploadthing.com)
 
-## Deploy on Vercel
+## Author
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Abhishek ([@abhishk_084](https://x.com/abhishk_084))
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Credits
+
+- [yearbook-pics](https://replicate.com/catacolabs/yearbook-pics) - model by [@catacolabs](https://replicate.com/catacolabs)
+- [Spirals](https://spirals.vercel.app/) - starter template and code examples by [@steventey](https://twitter.com/steventey)
+- [Emojis](https://github.com/pondorasti/emojis) - starter template and code examples [@pondorasti](https://x.com/pondorasti)

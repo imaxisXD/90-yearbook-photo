@@ -39,7 +39,6 @@ function FileUpload() {
             {!isUploading &&
                 <div {...getRootProps({
                     className: "flex justify-center border-sky-400 gap-5 items-center flex-col border-dashed bg-white border-2 rounded-xl cursor-pointer py-8"
-
                 })}>
                     <input {...getInputProps()} />
                     <>
