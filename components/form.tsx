@@ -35,7 +35,7 @@ export default function Form() {
                     router.push(`/t/${id}`);
                 })
             }}>
-            <div className="p-2 rounded-xl w-full">
+            <div className="p-2 rounded-xl w-full text-black">
                 <input
                     id="imageFile"
                     name="imageFile"
@@ -43,7 +43,17 @@ export default function Form() {
                     accept="image/*"
                     className="sr-only"
                 />
-                <input type="text" name="gender" id="gender" placeholder="Enter Man/Woman" />
+                <fieldset>
+                    <legend>Select Gender:</legend>
+                    <div>
+                        <input type="radio" id="man" name="gender" value="man" />
+                        <label htmlFor="man">Man</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="woman" name="gender" value="woman" />
+                        <label htmlFor="woman">Woman</label>
+                    </div>
+                </fieldset>
             </div>
             <SubmitButton />
         </form >
