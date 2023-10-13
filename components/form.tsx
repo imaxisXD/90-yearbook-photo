@@ -36,23 +36,14 @@ export default function Form() {
                 })
             }}>
             <div className="p-2 rounded-xl w-full">
-                <div
-                    className="flex justify-center border-sky-400 gap-5 items-center flex-col border-dashed bg-white border-2 rounded-xl cursor-pointer py-8"
-                >
-                    <input
-                        id="imageFile"
-                        name="imageFile"
-                        type="file"
-                        accept="image/*"
-                        className="sr-only"
-                    />
-                    <>
-                        <UploadCloud className="text-sky-400 h-10 w-10" />
-                        <p className="text-sm text-gray-600 text-center ">
-                            You can also drag and drop an image here.
-                        </p>
-                    </>
-                </div>
+                <input
+                    id="imageFile"
+                    name="imageFile"
+                    type="file"
+                    accept="image/*"
+                    className="sr-only"
+                />
+                <input type="text" name="gender" id="gender" placeholder="Enter Man/Woman" />
             </div>
             <SubmitButton />
         </form >

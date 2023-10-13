@@ -1,5 +1,4 @@
 "use server";
-
 import Replicate from "replicate";
 import { nanoid } from "./utils";
 import { SITE_URL, WEBHOOK_URL } from "./constants";
@@ -21,7 +20,7 @@ export async function generate(form: FormData) {
             version: "556bdffb674f9397e6f70d1607225f1ee2dad99502d15f44ba19d55103e1cba3",
             input: {
                 image: "https://replicate.delivery/pbxt/Jfg92BmhBy7STca9SVZmbLmYYExiSYIMMSPhKrO1Ap1mqFZE/rafa.jpg",
-                gender: 'man'
+                gender: gender.toString() || "Man"
             },
             webhook: webhook.toString(),
             webhook_events_filter: ["completed"],
