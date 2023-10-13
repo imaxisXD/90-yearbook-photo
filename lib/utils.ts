@@ -1,13 +1,13 @@
-import { generateReactHelpers } from "@uploadthing/react/hooks";
-import type { OurFileRouter } from "@/app/api/uploadthing/core";
 import { customAlphabet } from "nanoid";
-
-export const { useUploadThing, uploadFiles } =
-    generateReactHelpers<OurFileRouter>();
-
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
 
 // 7-character random string
 export const nanoid = customAlphabet(
     "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",
     7,
 );
+
+export function cn(...inputs: ClassValue[]) {
+    return twMerge(clsx(inputs));
+}

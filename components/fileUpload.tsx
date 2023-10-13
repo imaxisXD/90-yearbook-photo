@@ -2,7 +2,7 @@
 import { UploadCloud } from "lucide-react";
 import { toast } from "sonner";
 import { useDropzone } from 'react-dropzone'
-import { useUploadThing } from "@/lib/utils";
+import { useUploadThing } from "@/lib/hooks";
 
 
 function FileUpload() {

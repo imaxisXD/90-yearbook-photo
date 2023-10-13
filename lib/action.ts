@@ -2,33 +2,34 @@
 
 import Replicate from "replicate";
 import { nanoid } from "./utils";
-import { WEBHOOK_URL } from "./constants";
+import { SITE_URL, WEBHOOK_URL } from "./constants";
 
 const replicate = new Replicate({
     auth: process.env.REPLICATE_API_TOKEN as string,
 });
 
 export async function generate(form: FormData) {
-
     const id = nanoid();
+    const gender = form.get("gender") as string;
+    let imageUrl = form.get("imageUrl") as string;
+
+    const webhook = new URL(`${SITE_URL}/api/webhook`)
+    webhook.searchParams.set("id", id)
+    webhook.searchParams.set("secret", process.env.REPLICATE_WEBHOOK_SECRET as string)
+    console.log(webhook);
 
     const res = await Promise.all([
-
         replicate.predictions.create({
             version: "556bdffb674f9397e6f70d1607225f1ee2dad99502d15f44ba19d55103e1cba3",
             input: {
-                image: '',
-                gender: ''
+                image: "https://replicate.delivery/pbxt/Jfg92BmhBy7STca9SVZmbLmYYExiSYIMMSPhKrO1Ap1mqFZE/rafa.jpg",
+                gender: 'man'
             },
-            webhook: `${WEBHOOK_URL}?id=${id}${process.env.REPLICATE_WEBHOOK_SECRET
-                ? `&secret=${process.env.REPLICATE_WEBHOOK_SECRET}`
-                : ""
-                }`,
+            webhook: webhook.toString(),
             webhook_events_filter: ["completed"],
         }),
     ]);
-
-    console.log(res);
+    console.log(id);
 
     return id;
 }
