@@ -27,7 +27,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const scrolled = false;
   return (
     <html lang="en">
       <body className={cn(lazer.variable, inter.variable, "bg-gradient-to-br from-[#0f042e] h-full")}>

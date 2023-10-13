@@ -2,17 +2,9 @@ import Form from "@/components/form";
 import { Twitter } from "@/components/icons";
 // import PhotoBooth from "@/components/photo-booth";
 // import { CountDisplay, GeneratedCount } from "./generated-count";
-import { Suspense } from "react";
+// import { Suspense } from "react";
 
-export default function FormRSC({
-    prompt,
-    pattern,
-    image,
-}: {
-    prompt?: string;
-    pattern?: string;
-    image: string | null;
-}) {
+export default function FormRSC() {
     return (
         <div className="z-100 w-full max-w-xl px-2.5 xl:px-0 bg-white">
             <a

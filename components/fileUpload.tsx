@@ -1,4 +1,5 @@
-'use client';
+"use client";
+
 import { UploadCloud } from "lucide-react";
 import { toast } from "sonner";
 import { useDropzone } from 'react-dropzone'
@@ -18,7 +19,6 @@ function FileUpload() {
                 toast('Photo upload started')
             },
         }
-
     )
     const { getInputProps, getRootProps } = useDropzone(
         {

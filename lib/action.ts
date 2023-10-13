@@ -16,8 +16,6 @@ export async function generate(form: FormData) {
     const webhook = new URL(`${SITE_URL}/api/webhook`)
     webhook.searchParams.set("id", id)
     webhook.searchParams.set("secret", process.env.REPLICATE_WEBHOOK_SECRET as string)
-    console.log(webhook);
-
     const res = await Promise.all([
         replicate.predictions.create({
             version: "556bdffb674f9397e6f70d1607225f1ee2dad99502d15f44ba19d55103e1cba3",
@@ -29,7 +27,5 @@ export async function generate(form: FormData) {
             webhook_events_filter: ["completed"],
         }),
     ]);
-    console.log(id);
-
     return id;
 }

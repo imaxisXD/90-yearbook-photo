@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import FormRSC from "@/components/form-rsc";
 import { Metadata } from "next";
 
@@ -33,13 +33,7 @@ import { Metadata } from "next";
 //     };
 // }
 
-export default async function Results({
-    params,
-}: {
-    params: {
-        id: string;
-    };
-}) {
+export default async function Results() {
     // const data = await kv.hgetall<{
     //     prompt: string;
     //     pattern?: string;
@@ -47,11 +41,10 @@ export default async function Results({
     // }>(params.id);
     const data = ''
     if (!data) {
-        notFound();
+        redirect("/")
     }
     return (
         <FormRSC
-            image={'data.image || null'}
         />
     );
 }
