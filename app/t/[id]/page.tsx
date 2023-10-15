@@ -1,3 +1,4 @@
+
 import { notFound, redirect } from "next/navigation";
 import FormRSC from "@/components/form-rsc";
 import { Metadata } from "next";
@@ -5,6 +6,7 @@ import Image from "next/image";
 import { db } from "@/lib/database";
 import { photoTable } from "@/lib/database/schema";
 import { eq } from "drizzle-orm";
+import PhotoBooth from "@/components/photo-booth";
 
 // export async function generateMetadata({
 //     params,
@@ -46,14 +48,12 @@ export default async function Results({
 }) {
 
     const result = await db.select().from(photoTable).where(eq(photoTable.imageId, params.id));
-    console.log('result ----> ', result);
-    console.log('key --->', params.id);
+    console.log(result);
 
     if (!result) {
         redirect("/")
     }
     return (
-        // <Image src={result[0].resultImageUrl || null} height={600} width={400} alt="Result image" />
-        <h1>ss</h1>
+        <PhotoBooth image={result[0].resultImageUrl || null} />
     );
 }

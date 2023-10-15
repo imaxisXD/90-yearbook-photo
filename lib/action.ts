@@ -24,10 +24,10 @@ export async function generate(form: FormData) {
         imageUrl = response.data.url;
     }
     await db.insert(photoTable).values({
-        imageId: id,
+        imageId: id.toString(),
         inputImageUrl: imageUrl,
     })
-    const webhook = new URL(`${SITE_URL}/api/webhook`)
+    const webhook = new URL(`https://d4fb-203-192-253-253.ngrok-free.app/api/webhook`)
     webhook.searchParams.set("id", id)
     webhook.searchParams.set("secret", process.env.REPLICATE_WEBHOOK_SECRET as string)
     const res = await Promise.all([
@@ -41,7 +41,5 @@ export async function generate(form: FormData) {
             webhook_events_filter: ["completed"],
         }),
     ]);
-    console.log(res);
-
     return id;
 }
