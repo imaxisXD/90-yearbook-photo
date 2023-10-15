@@ -7,6 +7,8 @@ import { UTApi } from "uploadthing/server";
 
 
 export async function POST(req: Request) {
+    console.log(req);
+
     const searchParams = new URL(req.url).searchParams;
     const id = searchParams.get("id") as string;
     const utapi = new UTApi();
