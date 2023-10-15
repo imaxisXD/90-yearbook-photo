@@ -1,11 +1,3 @@
-export const WEBHOOK_URL =
-    process.env.NEXT_PUBLIC_VERCEL_ENV === "production"
-        ? "https://spirals.vercel.app/api/webhook"
-        : process.env.NEXT_PUBLIC_VERCEL_ENV === "preview"
-            ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/webhook`
-            : `${process.env.NGROK_URL}/api/webhook`;
-
-export const PROD_URL = "https://emojis.sh"
 export const SITE_URL =
     process.env.NEXT_PUBLIC_VERCEL_ENV === "production" || process.env.NEXT_PUBLIC_VERCEL_ENV === "preview"
         ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`

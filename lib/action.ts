@@ -5,7 +5,6 @@ import { SITE_URL } from "./constants";
 import { UTApi } from "uploadthing/server";
 import { db } from "./database";
 import { photoTable } from "./database/schema";
-import { log } from "console";
 
 const replicate = new Replicate({
     auth: process.env.REPLICATE_API_TOKEN as string,

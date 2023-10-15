@@ -1,6 +1,10 @@
 import { notFound, redirect } from "next/navigation";
 import FormRSC from "@/components/form-rsc";
 import { Metadata } from "next";
+import Image from "next/image";
+import { db } from "@/lib/database";
+import { photoTable } from "@/lib/database/schema";
+import { eq } from "drizzle-orm";
 
 // export async function generateMetadata({
 //     params,
@@ -33,18 +37,23 @@ import { Metadata } from "next";
 //     };
 // }
 
-export default async function Results() {
-    // const data = await kv.hgetall<{
-    //     prompt: string;
-    //     pattern?: string;
-    //     image?: string;
-    // }>(params.id);
-    const data = ''
-    if (!data) {
+export default async function Results({
+    params,
+}: {
+    params: {
+        id: string;
+    };
+}) {
+
+    const result = await db.select().from(photoTable).where(eq(photoTable.imageId, params.id));
+    console.log('result ----> ', result);
+    console.log('key --->', params.id);
+
+    if (!result) {
         redirect("/")
     }
     return (
-        <FormRSC
-        />
+        // <Image src={result[0].resultImageUrl || null} height={600} width={400} alt="Result image" />
+        <h1>ss</h1>
     );
 }
