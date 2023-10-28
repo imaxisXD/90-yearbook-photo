@@ -47,7 +47,9 @@ export default async function Results({
     };
 }) {
 
-    const result = await db.select().from(photoTable).where(eq(photoTable.imageId, params.id));
+    const result = await db.select().from(photoTable)
+        .where(eq(photoTable.imageId, params.id));
+
     console.log(result);
 
     if (!result) {

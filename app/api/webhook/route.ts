@@ -26,7 +26,7 @@ export async function POST(req: Request) {
 
     // upload & store in UploadThing
     // store it in databse
-
+    console.log('OUTPUT IMAGW----->', output)
     const res = await db.update(photoTable).set({
         resultImageUrl: output
     }).where(eq(photoTable.imageId, id.toString())).returning();
